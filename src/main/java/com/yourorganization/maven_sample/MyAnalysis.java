@@ -5,7 +5,7 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.stmt.ReturnStmt;
 import com.github.javaparser.resolution.types.ResolvedType;
-import com.github.javaparser.symbolsolver.resolution.SymbolSolver;
+import com.github.javaparser.symbolsolver.JavaSymbolSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeSolver;
 
@@ -21,7 +21,7 @@ public class MyAnalysis {
         // Set up a minimal type solver that only looks at the classes used to run this sample.
         CombinedTypeSolver combinedTypeSolver = new CombinedTypeSolver();
         combinedTypeSolver.add(new ReflectionTypeSolver());
-        SymbolSolver symbolSolver = new SymbolSolver(combinedTypeSolver);
+        JavaSymbolSolver symbolSolver = new JavaSymbolSolver(combinedTypeSolver);
         JavaParser.getStaticConfiguration().setSymbolResolver(symbolSolver);
 
         // Parse some code
