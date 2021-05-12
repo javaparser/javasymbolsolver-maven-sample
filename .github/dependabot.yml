@@ -1,0 +1,13 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: com.github.javaparser:javaparser-symbol-solver-core
+    versions:
+    - 3.18.0
+    - 3.19.0
+    - 3.20.0
