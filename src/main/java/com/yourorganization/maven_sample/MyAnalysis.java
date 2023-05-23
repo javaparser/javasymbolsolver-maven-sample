@@ -20,7 +20,7 @@ public class MyAnalysis {
 
         // Configure JavaParser to use type resolution
         JavaSymbolSolver symbolSolver = new JavaSymbolSolver(combinedTypeSolver);
-        StaticJavaParser.getConfiguration().setSymbolResolver(symbolSolver);
+        StaticJavaParser.getParserConfiguration().setSymbolResolver(symbolSolver);
 
         // Parse some code
         CompilationUnit cu = StaticJavaParser.parse("class X { int x() { return 1 + 1.0 - 5; } }");
